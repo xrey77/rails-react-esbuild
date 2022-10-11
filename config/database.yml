@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: rails7_esbuild
+  username: rey
+  password: rey
+  host: localhost
+  port: 8090
+
+test:
+  <<: *default
+  database: rails7_esbuild
+
+production:
+  <<: *default
+  database: rails7_esbuild
+  username: rey
+  password: <%= ENV['RAILSAPI_DATABASE_PASSWORD'] %>

@@ -1,0 +1,5 @@
+        <h1>Sign Up Confirmation</h1>
+        <p>
+        <%= @users.name %>, You have successfully signed up, please use this token to activate your account,
+        <a class="btn btn-success" href="http://192.168.1.7:3000/client?status=<%= @users.otp_secret_key %>">Activate</a>
+        </p>
